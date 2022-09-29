@@ -13,6 +13,14 @@ function App() {
   const [nome, setNome] = useState('')
   const [idade, setIdade] = useState('')
   const [cidade, setCidade] = useState('')
+  const [vetor, setVetor] = useState([])
+
+  //Função Cadastrar
+  const cadastrar = () => {
+    let obj = {'nome':nome, 'idade':idade, 'cidade':cidade}
+    //Adicionar ao Vetor
+    setVetor([...vetor, obj]);
+  }
 
   return (
     <div className="App">
@@ -21,6 +29,7 @@ function App() {
       setNome={setNome} 
       setIdade={setIdade}
       setCidade={setCidade}
+      cadastrar={cadastrar}
        />
       <Tabela />
     </div>
