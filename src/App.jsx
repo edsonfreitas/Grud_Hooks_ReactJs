@@ -31,7 +31,7 @@ function App() {
       setCidade={setCidade}
       cadastrar={cadastrar}
        />
-      <Tabela />
+      <Tabela vetor={vetor} />
     </div>
   )
 }

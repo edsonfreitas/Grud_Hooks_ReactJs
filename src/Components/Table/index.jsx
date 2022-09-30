@@ -1,6 +1,6 @@
 //Componente Tabela
 
-export function Tabela(){
+export function Tabela({vetor}){
 
     return(
         <>
@@ -15,7 +15,23 @@ export function Tabela(){
                 </tr>
             </thead>
 
-            <tbody></tbody>
+            <tbody>
+                {
+                    vetor.map((obj, indice) =>(
+                        <tr key={indice}>
+                            <td>{indice+1}</td>
+                            <td>{obj.nome}</td>
+                            <td>{obj.idade}</td>
+                            <td>{obj.cidade}</td>
+                            <td>
+                                <button 
+                                className="btn btn-success">Selecionar
+                                </button>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
          </table>
         </>
     )
