@@ -21,13 +21,13 @@ function App() {
     let obj = {'nome':nome, 'idade':idade, 'cidade':cidade}
     //Adicionar ao Vetor
     setVetor([...vetor, obj]);
-    //Limpar campos dos Inpts
+    //Limpar campos dos Inputs
     setNome('');
     setIdade('');
     setCidade('');
   }
 
-  //Função Seleciona Usuario
+  //Função Seleciona Usuário
    const selecionar = (indice) => {
     setIndiceVetor(indice)
 
@@ -37,6 +37,21 @@ function App() {
     
     setBtnCadastrar(false)
 
+   }
+
+   //Função Altera Dados
+   const alterarDados = () => {
+    let obj = {'nome':nome, 'idade':idade, 'cidade':cidade} 
+    //Cria copia vetor atual
+    let copiaVetor = [...vetor];
+    copiaVetor[indiceVetor] = obj;
+    //Define o novo vetor com as alterações
+    setVetor(copiaVetor);
+    //Limpar campos dos Inputs
+    setNome('');
+    setIdade('');
+    setCidade('');
+    setBtnCadastrar(true)
    }
 
   return (
@@ -50,6 +65,7 @@ function App() {
       setCidade={setCidade}
       cidade={cidade}
       cadastrar={cadastrar}
+      alterarDados={alterarDados}
        />
       <Tabela vetor={vetor} selecionar={selecionar} />
     </div>
