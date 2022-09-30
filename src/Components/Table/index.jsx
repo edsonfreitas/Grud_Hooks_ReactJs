@@ -1,6 +1,6 @@
 //Componente Tabela
 
-export function Tabela({vetor}){
+export function Tabela({vetor, selecionar}){
 
     return(
         <>
@@ -25,7 +25,8 @@ export function Tabela({vetor}){
                             <td>{obj.cidade}</td>
                             <td>
                                 <button 
-                                className="btn btn-success">Selecionar
+                                className="btn btn-success"
+                                onClick={() => selecionar(indice)}>Selecionar
                                 </button>
                             </td>
                         </tr>
