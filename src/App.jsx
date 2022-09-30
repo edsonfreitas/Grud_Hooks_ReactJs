@@ -54,6 +54,21 @@ function App() {
     setBtnCadastrar(true)
    }
 
+   //Função remover 
+   const remover = () => {
+    //Copia do vetor
+    let copiaVetor = [...vetor];
+    //Informa a partir de onde será excluido e quantos seram removidos.
+    copiaVetor.splice(indiceVetor, 1);
+    //Define o novo vetor com as alterações
+    setVetor(copiaVetor);
+
+    setNome('');
+    setIdade('');
+    setCidade('');
+    setBtnCadastrar(true)
+   }
+
   return (
     <div className="App">
       <Formulario 
@@ -65,6 +80,7 @@ function App() {
       setCidade={setCidade}
       cidade={cidade}
       cadastrar={cadastrar}
+      remover={remover}
       alterarDados={alterarDados}
        />
       <Tabela vetor={vetor} selecionar={selecionar} />
