@@ -1,4 +1,4 @@
-export function Formulario({btnCadastrar, setNome, setIdade, setCidade, cadastrar, nome, idade, cidade, alterarDados, remover}){
+export function Formulario({btnCadastrar, setNome, setIdade, setCidade, cadastrar, nome, idade, cidade, alterarDados, remover, cancelar}){
      
     return(
         <>
@@ -44,8 +44,12 @@ export function Formulario({btnCadastrar, setNome, setIdade, setCidade, cadastra
                      className="btn btn-secondary"
                       onClick={alterarDados}
                       />
-                     <input type="button" value='Excluir' className="btn btn-danger" onClick={remover}/>
-                     <input type="button" value='Cancelar' className="btn btn-success"/>
+                     <input type="button" value='Excluir' className="btn btn-danger" 
+                     onClick={remover}
+                     />
+                     <input type="button" value='Cancelar' className="btn btn-success" 
+                     onClick={cancelar}
+                     />
                 </div>
             }
 

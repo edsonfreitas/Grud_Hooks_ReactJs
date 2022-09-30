@@ -69,6 +69,14 @@ function App() {
     setBtnCadastrar(true)
    }
 
+   //Função cancelar a edição ou remoção
+   const cancelar = () => {
+    setNome('');
+    setIdade('');
+    setCidade('')
+    setBtnCadastrar(true)
+   } 
+
   return (
     <div className="App">
       <Formulario 
@@ -81,6 +89,7 @@ function App() {
       cidade={cidade}
       cadastrar={cadastrar}
       remover={remover}
+      cancelar={cancelar}
       alterarDados={alterarDados}
        />
       <Tabela vetor={vetor} selecionar={selecionar} />
